@@ -1,0 +1,133 @@
+.trailer_section{
+    background-color: var(--primary);
+    display: flex;
+    height: 40vh;
+}
+.trailer_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+}
+.trailer_video{
+    position: relative;
+    flex: 1 1 50%;
+}
+.trailer_video #trailer_video_image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.trailer_video_modal{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(72 72 72 / 90%);
+    backdrop-filter: blur(20px);
+
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+}
+.trailer_video_modal .modal_content{
+    width: 50vw;
+}
+.trailer_video_modal .modal_header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50vw;
+    padding: 8px 0px;
+    color: var(--white);
+    border-bottom: 1px solid var(--g60);
+    margin-bottom: 30px;
+}
+.trailer_video_modal .modal_header i{
+    font-size: 30px;
+    cursor: pointer;
+}
+.trailer_content{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: var(--primary-20);
+    padding: 0 70px;
+    flex: 1 1 50%;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.trailer_content h3{
+    font-size: 36px;
+    color: var(--primary);
+}
+.trailer_content span{
+    line-height: 1.5em;
+    color: var(--primary);
+    font-weight: 600;
+    text-align: center;
+}
+#trailer_video_icon{
+    position: absolute;
+    right: 50%;
+    cursor: pointer;
+}
+@media screen and (max-width: 1000px){
+    .trailer_section{
+        position: relative;
+    }
+    .trailer_wrapper{
+        flex-direction: column-reverse;
+    }
+    .trailer_content {
+        padding: 10px 10px 60px 10px;
+    }
+    .trailer_content h3{
+        font-size: 30px;
+        text-align: center;
+    }
+    .trailer_video #trailer_video_image{
+        width: 80%;
+        height: 30vh;
+        padding: 60px 10px 10px 10px;
+        margin: auto;
+    }
+    .trailer_video #trailer_video_image img{
+        width: 100%;
+    }
+    #trailer_video_icon {
+        top: 30%;
+        left: 44%;
+    }
+    .meet_wipoint_info{
+        margin-top: 100px !important;
+    }
+}
+@media screen and (max-width: 700px){
+    #trailer_video_icon{
+        top: 35%;
+        left: 40%;
+    }
+}
+@media screen and (max-width: 580px){
+    #trailer_video_icon{
+        top: 41%;
+        left: 40%;
+    }
+}
+@media screen and (max-width: 480px){
+    #trailer_video_icon{
+        top: 44%;
+        left: 40%;
+    }
+}
+@media screen and (max-width: 385px){
+    #trailer_video_icon{
+        top: 50%;
+        left: 33%;
+    }
+}

@@ -1,0 +1,155 @@
+:root{
+    /*COLORS CODES*/
+    --primary: #E01F26;
+    --primary-20:#F9D2D4;
+    --white: #FFFFFF;
+    --black: #070709;
+    --g95: #EBEDF2;
+    --g90: #E6E8F0;
+    --g80: #C1C4D6;
+    --g60: #8F95B2;
+    --g50: #696F8C;
+    --g40: #474D66;
+
+    /*FONT SIZE*/
+    --font300: 600 16px 'Quicksand';
+    --font200: 600 14px 'Quicksand';
+    --font100: 600 12px 'Quicksand';
+    --font50: 600 10px 'Quicksand';
+    --font-b800: 700 24px 'Quicksand';
+    --font-b700: 700 20px 'Quicksand';
+    --font-b800: 700 24px 'Quicksand';
+    --font-b900: 700 50px 'Quicksand';
+
+    /*PADDING*/
+    --p40: 40px;
+    --m40: 40px;
+    --h40: 40px;
+    --page-width:70vw;
+    --navbar-height: 100px;
+    --border: 1px solid var(--g80);
+    --border-radius:10px;
+
+}
+/*@font-face {
+    font-family: Helvetica, Sans-Serif;
+    src: url('/assets/fonts/Helvetica-Bold.ttf');
+}*/
+body{
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 500;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color: var(--black);
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+h1,h2,h3,h4,h5,h6{
+    margin: 0;
+}
+input, textarea{
+    border: var(--border);
+    border-radius: var(--border-radius);
+    font-size: 12px;
+    padding: 10px;
+    transition: all .5s ease;
+    outline: none;
+}
+input:focus, textarea:focus{
+    border-color: var(--primary);
+}
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: initial;
+    color: var(--primary);
+    height: var(--h40);
+    transition: all .3s ease;
+    font-size: 14px;
+    border-radius: 50px;
+    border: var(--border);
+}
+.btn_border{
+    border: 1px solid var(--primary);
+}
+.btn_border:hover{
+    background-color: var(--primary);
+    color: var(--white);
+}
+.btn_fill {
+    background-color: var(--primary);
+    color: var(--white);
+}
+.btn_fill:hover{
+    background-color: transparent;
+    border-color: var(--primary);
+    color: var(--primary);
+}
+.breadcrumb_wrapper{
+    width: var(--page-width);
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 25px;
+}
+.navbar_bg{
+    background-color: var(--g95);
+}
+.breadcrumb_section{
+    height: 40vh;
+    background-color: var(--g95);
+    display: flex;
+}
+.breadcrumb_section h3.page_title{
+    font-size: 40px;
+    color: var(--black);
+}
+.breadcrumb_link_wrapper{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.breadcrumb_link_wrapper a{
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--g50);
+}
+.breadcrumb_link_wrapper i{
+    font-size: 18px;
+    color: var(--g50);
+}
+
+.breadcrumb_link_wrapper .this_page{
+    color: var(--primary);
+}
+.page_content_header {
+    background-image: url(/assets/images/content_bg.png);
+    background-size: cover;
+    display: flex;
+    min-height: 600px;
+    clip-path: polygon(100% 0,0 0,0 98.57%,1% 98.56%,2% 98.53%,3% 98.47%,4% 98.4%,5% 98.3%,6% 98.18%,7% 98.05%,8% 97.89%,9% 97.72%,10% 97.52%,11% 97.32%,12% 97.09%,13% 96.85%,14% 96.6%,15% 96.34%,16% 96.06%,17% 95.78%,18% 95.49%,19% 95.19%,20% 94.89%,21% 94.59%,22% 94.28%,23% 93.98%,24% 93.67%,25% 93.37%,26% 93.08%,27% 92.78%,28% 92.5%,29% 92.23%,30% 91.97%,31% 91.71%,32% 91.48%,33% 91.25%,34% 91.04%,35% 90.85%,36% 90.68%,37% 90.52%,38% 90.39%,39% 90.27%,40% 90.17%,41% 90.1%,42% 90.04%,43% 90.01%,44% 90%,45% 90.01%,46% 90.04%,47% 90.1%,48% 90.18%,49% 90.27%,50% 90.39%,51% 90.53%,52% 90.68%,53% 90.86%,54% 91.05%,55% 91.26%,56% 91.48%,57% 91.72%,58% 91.97%,59% 92.24%,60% 92.51%,61% 92.8%,62% 93.09%,63% 93.38%,64% 93.68%,65% 93.99%,66% 94.29%,67% 94.6%,68% 94.9%,69% 95.21%,70% 95.5%,71% 95.79%,72% 96.07%,73% 96.35%,74% 96.61%,75% 96.86%,76% 97.1%,77% 97.32%,78% 97.53%,79% 97.72%,80% 97.9%,81% 98.05%,82% 98.19%,83% 98.3%,84% 98.4%,85% 98.48%,86% 98.53%,87% 98.56%,88% 98.57%,89% 98.56%,90% 98.53%,91% 98.47%,92% 98.39%,93% 98.3%,94% 98.18%,95% 98.04%,96% 97.88%,97% 97.71%,98% 97.52%,99% 97.31%,100% 97.08%);
+}
+.page_content_wrapper{
+    width: var(--page-width);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: self-end;
+    gap: 10px;
+}
+.page_content_wrapper h3{
+    font-size: 35px;
+    color: var(--black);
+}
+.page_content_wrapper span{
+    font-size: 20px;
+    color: var(--g50);
+}

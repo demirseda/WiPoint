@@ -1,0 +1,101 @@
+.footer_wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.footer_block_wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--g95);
+    padding: 6vw 14vw;
+}
+.footer_block_wrapper .footer_block h3{
+    font-size: 25px;
+    color: var(--black);
+}
+.footer_block_wrapper .footer_block > ul{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+.footer_block_wrapper .footer_block > ul li {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.footer_block_wrapper .footer_block > ul li:hover a {
+    color: var(--primary);
+    transition: all .5s ease;
+}
+.footer_block_wrapper .footer_block > ul li i {
+    color: var(--primary);
+    font-size: 20px;
+}
+.footer_block_wrapper .footer_block > ul li a{
+    color: var(--g50);
+}
+.footer_icons_wrapper{
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14vw;
+}
+.footer_icons_wrapper .footer_logos,
+.footer_icons_wrapper .social_media {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+.footer_icons_wrapper .social_media a{
+    color: var(--white);
+    transition: all .5s ease;
+}
+.footer_icons_wrapper .social_media a:hover{
+    color: var(--primary);
+    transform: scale(1.5);
+}
+.footer_icons_wrapper .footer_logos a{
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer_icons_wrapper .footer_logos .ubiquiti{
+    width: 50px !important;
+}
+.footer_icons_wrapper .footer_logos a img{
+    width: 100%;
+}
+@media screen and (max-width: 1000px){
+    .footer_block_wrapper{
+        flex-direction: column;
+        padding: 15px;
+        align-items: flex-start;
+        gap: 30px;
+    }
+    .footer_block_wrapper .footer_block > ul{
+        margin-top: 10px;
+    }
+    .footer_wrapper{
+        margin-top: 50px;
+    }
+    .footer_icons_wrapper .footer_logos, .footer_icons_wrapper .social_media{
+        gap: 35px;
+    }
+    .footer_icons_wrapper .footer_logos a{
+        width: 50px;
+    }
+    .footer_icons_wrapper{
+        padding: 15px;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .footer_block_wrapper .footer_block h3{
+        font-size: 20px;
+    }
+    .footer_block_wrapper .footer_block > ul li a{
+        font-size: 14px;
+    }
+}

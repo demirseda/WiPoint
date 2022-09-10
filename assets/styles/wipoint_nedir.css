@@ -1,0 +1,155 @@
+.wipoint_nedir_section{
+    width: var(--page-width);
+    margin: auto;
+    min-height: 100vh;
+    display: flex;
+    position: relative;
+    gap: 35px;
+    padding: 100px 0;
+}
+.wipoint_nedir_wrapper{
+
+    width: 80%;
+}
+.page_content_header{
+    background-image: url('/assets/images/content_bg.png');
+}
+.wipoint_nedir_wrapper .left_area.info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 60%;
+}
+.wipoint_nedir_wrapper .left_area.info span{
+    color: var(--g40);
+    line-height: 1.5em;
+}
+.wipoint_nedir_wrapper .right_area{
+    max-width: 40%;
+}
+.wipoint_nedir_wrapper .right_area img{
+    width: 100%;
+}
+.wipoint_menu{
+    border-radius: var(--border-radius);
+    width: 20%;
+    background-color: var(--g95);
+    height: 50vh;
+}
+.wipoint_menu ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+    gap: 30px;
+}
+.wipoint_menu ul .wipoint_tab{
+    color: var(--g40);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+.wipoint_menu ul .wipoint_tab a{
+    color: var(--g40);
+    white-space: nowrap;
+    transition: all .5s ease;
+}
+.wipoint_menu ul .wipoint_tab:hover a{
+    color: var(--primary);
+}
+.wipoint_menu ul .wipoint_tab.active{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-left: 3px solid var(--primary);
+}
+.wipoint_menu ul .wipoint_tab.active a{
+    color: var(--primary);
+}
+.wipoint_tab_content{
+    display: none;
+    gap: 30px;
+}
+.wipoint_tab_content.active{
+    display: flex;
+}
+.wipoint_tab_content .kullanici_sozlesmesi,
+.wipoint_tab_content .yonetici_paneli{
+    width: 100% !important;
+}
+.wipoint_tab_content .kullanici_sozlesmesi .kullanici_sozlesmesi_firma_bilgisi{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.wipoint_tab_content .yonetici_paneli_card_wrapper {
+    grid-gap: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(17rem,1fr));
+}
+.wipoint_tab_content .yonetici_paneli_card_wrapper ul {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 15px;
+}
+.wipoint_tab_content .yonetici_paneli_card_wrapper .info_card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    border-right: 1px solid var(--g95);
+    padding: 15px;
+    border-bottom: 1px solid var(--g95);
+}
+.wipoint_tab_content .yonetici_paneli_card_wrapper .info_card:nth-child(4),
+.wipoint_tab_content .yonetici_paneli_card_wrapper .info_card:nth-child(5),
+.wipoint_tab_content .yonetici_paneli_card_wrapper .info_card:nth-child(6){
+    border-bottom: none;
+}
+.wipoint_tab_content .yonetici_paneli_card_wrapper .info_card:nth-child(3),
+.wipoint_tab_content .yonetici_paneli_card_wrapper .info_card:nth-child(6){
+    border-right: none;
+}
+.wipoint_tab_content .yonetici_paneli_card_wrapper .info_card ul li{
+    position: relative;
+}
+.wipoint_tab_content .yonetici_paneli_card_wrapper .info_card ul li p{
+    padding-left: 20px;
+    margin: 0;
+}
+.wipoint_tab_content .yonetici_paneli_card_wrapper .info_card ul li::before{
+    content: "";
+    position: absolute;
+    top: 7px;
+    width: 8px;
+    height: 8px;
+    border-radius: var(--border-radius);
+    background: linear-gradient(341.57deg, #0DB714 2.5%, rgba(13, 183, 20, 0.0208333) 102.49%, rgba(13, 183, 20, 0) 102.5%);
+    font-size: 20px;
+}
+@media screen and (max-width: 1000px){
+    .page_content_wrapper{
+        width: 100%;
+        padding: 10px;
+        align-items: flex-start;
+    }
+    .wipoint_nedir_section{
+        width: 94%;
+        padding: 10px;
+        flex-direction: column;
+    }
+    .wipoint_menu,
+    .wipoint_nedir_wrapper{
+        width: 100%;
+    }
+    .wipoint_tab_content.active{
+        flex-direction: column;
+    }
+    .wipoint_nedir_wrapper .left_area.info{
+        width: 100%;
+    }
+    .wipoint_nedir_wrapper .right_area{
+        max-width: 100%;
+    }
+}

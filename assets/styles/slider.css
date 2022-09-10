@@ -1,0 +1,134 @@
+.slider_section{
+    overflow-x: hidden;
+    height: calc(100vh - 300px);
+    display: flex;
+    margin-bottom: 300px;
+}
+.slider_section::after{    
+    content: "";
+    background-image: url(/assets/images/slide_1_bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    opacity: .50;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: -1;
+}
+.slider_section .slide_active{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: var(--page-width);
+    margin: auto;
+    gap: 50px;
+}
+.slider_content{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 35vw;
+}
+.slider_section .slide{
+    display: none;
+} 
+.slider_title{
+    font:var(--font-b900);
+}
+.slider_description{
+    color: var(--g50);
+}
+.btn_prev{
+    position: absolute;
+    left: 60px;
+    bottom: 50%;
+    font-size: 60px;
+    color: var(--g80);
+    cursor: pointer;
+}
+.btn_next{
+    position: absolute;
+    right: 60px;
+    bottom: 50%;
+    font-size: 60px;
+    color: var(--g80);
+    cursor: pointer;
+}
+.slider_image{
+    width: 25vw;
+}
+.slider_image img{
+    width: 100%;
+}
+.slide{
+    opacity: 0;
+}
+.slide_active{
+    opacity: 1;
+}
+.animation_left {
+    transition: all .5s ease;
+    animation: animate__slideInLeft 1s;
+  }
+  
+  .animation_right {
+    transition: all .5s ease;
+    animation: animate__slideInRight 1s;
+  }
+
+@keyframes animate__slideInLeft {
+    0% {
+      transform: translateX(-999px);
+    }
+  
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes animate__slideInRight {
+    0% {
+      transform: translateX(999px);
+    }
+  
+    100% {
+      transform: translateX(0);
+    }
+  }
+  .slider_buttons{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .slider_buttons a{
+    width: 200px;
+  }
+  @media screen and (max-width: 1000px){
+    .slider_section{
+      margin: 100px 0;
+    }
+    .slider_section .btn_next{
+      right: 10px;
+    }
+    .slider_section .btn_prev{
+      left: 10px;
+    }
+    .slider_section .slide_active{
+      flex-flow: column-reverse;
+      width: 100%;
+      margin: 10px;
+    }
+    .slider_content .animation_left{
+      width: 100%;
+    }
+    .slider_content{
+      width: 90vw;
+    }
+    .slider_image{
+      width: 70vw;
+    }
+    .slider_title{
+      font-size: 30px;
+    }
+  }

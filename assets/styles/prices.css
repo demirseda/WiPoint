@@ -1,0 +1,109 @@
+section.prices_section {
+    width: var(--page-width);
+    margin: auto;
+    padding: 200px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+.prices_info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+.prices_info h3{
+    font-size: 35px;
+    color: var(--black);
+    text-align: center;
+}
+.prices_info span{
+    text-align: center;
+    font-size: 17px;
+    line-height: 1.5em;
+    color: var(--g50);
+    padding: 0 100px;
+}
+.price_cards_wrapper {
+    grid-gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(16rem,1fr));
+    overflow-y: auto;
+    width: 100%;
+    padding: 10px;
+}
+.price_cards_wrapper .price_card{
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 14px rgb(229 229 255 / 66%);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 30px 0;
+    gap: 30px;
+}
+.price_cards_wrapper .price_card .card_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+.price_cards_wrapper span.price_icon {
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.price_cards_wrapper span.price_icon img{
+    width: 100%;
+}
+.card_menu ul li{
+    margin-bottom: 15px;
+    display: flex;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--g40);
+}
+.card_menu ul li i{
+    color: var(--primary);
+    font-size: 20px;
+    font-weight: 600;
+}
+.card_footer{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: auto;
+    gap: 15px;
+    width: 80%;
+}
+.card_footer .package_price .price{
+    font-size: 35px;
+    font-weight: 600;
+}
+.card_footer .package_price .kdv{
+    font-weight: 600;
+    font-size: 20px;
+}
+.platinium_package .card_footer .package_price .price{
+    font-size: 25px !important;
+}
+.card_footer .btn_buy{
+    width: 100%;
+}
+@media screen and (max-width: 1000px){
+    section.prices_section{
+        width: 95%;
+        padding: 100px 10px 10px 10px;
+    }
+    .prices_info h3{
+        font-size: 30px;
+    }
+    .prices_info span{
+        padding: 0;
+    }
+    .price_cards_wrapper{
+        width: unset;
+    }
+}

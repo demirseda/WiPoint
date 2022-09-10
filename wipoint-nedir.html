@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- jQuery -->
+     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+     
+    <!-- BOXICON -->
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+    <!-- GOOGLE FONTS Quicksand -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/styles/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/styles/navbar.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/styles/footer.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/styles/wipoint_nedir.css" />
+
+    <script src="assets/js/main.js"></script>
+
+    <title>WiPoint Cloud Hotspot | WiPoint Nedir</title>
+</head>
+<script>
+    $(document).ready(function(){
+        $(".wipoint_menu .wipoint_tab").click(function(){
+            
+            $(".wipoint_menu .wipoint_tab, .wipoint_nedir_wrapper .wipoint_tab_content").removeClass("active");
+            $(this).addClass("active");
+            $(`.wipoint_nedir_wrapper .wipoint_tab_content${$(this).index()}`).addClass("active");
+        });
+    })
+</script>
+<body>
+    <section class="navbar_section">
+        <div class="navbar_top">
+            <div class="social_media">
+                <a target="blank_" href="https://twitter.com/wicomtr"><i class='bx bxl-twitter'></i></a>
+                <a target="blank_" href="https://www.instagram.com/internetten_teknoloji/"><i class='bx bxl-instagram-alt' ></i></a>
+                <a target="blank_" href="https://www.facebook.com/WiPoint-Hotspot-Cloud-426349994388421/"><i class='bx bxl-facebook' ></i></a>
+            </div>
+            <div class="navbar_demo">
+                <span>WiPoint Cloud Hotspot, ücretsiz deneyin!</span>
+                <a href="#" class="btn btn_border demo_btn">Demo</a>
+            </div>
+        </div>
+        <div class="navbar_menu">
+            <div class="nav_responsive_menu"><i class='bx bx-menu-alt-left'></i></div>
+            <div class="logo_wrapper">
+                <a href="index.html">WiRadius</a>
+               
+            </div>
+            <div class="navbar_wrapper">
+                
+                <ul>
+                    <div class="navbar_header_res">
+                        <a href="index.html">WiRadius</a>
+                        <span class="navbar_res_menu_close"><i class="bx bx-x"></i></span>
+                    </div>
+                    <li> <a href="wipoint-nedir.html">WiPoint</a></li>
+                    <li>
+                        <a href="#"><span>5651 Yasası</span> <i class='bx bx-chevron-down'></i></a>
+                        
+                    </li>
+                    <li>
+                        <a href="#"><span>Entegrasyonlar</span><i class='bx bx-chevron-down'></i> </a>
+                    </li>
+                    <li>
+                        <a href="#"><span>Giriş Seçenekleri</span><i class='bx bx-chevron-down'></i> </a>
+                    </li>
+                    <li> <a href="prices.html"><span>WiPoint Paketleri</span></a></li>
+                    <li> <a href="contact.html">İletişim</a></li>
+                </ul>
+            </div>
+        </div>
+        
+    </section>
+    <section class="page_content_header">
+        <div class="page_content_wrapper">
+            <h3> WiPoint Nedir? </h3>
+            <span>Nedir, Nerede ve Nasıl Kullanabilirim ?</span>
+        </div>
+    </section>
+    <section class="wipoint_nedir_section">
+        <div class="wipoint_menu">
+            <ul>
+                <li class="wipoint_tab active"><a>WiPoint Nedir?</a></li>
+                <li class="wipoint_tab"><a>Yönetici Paneli</a></li>
+                <li class="wipoint_tab"><a>Kullanıcı Sözleşmesi</a></li>
+                <li class="wipoint_tab"><a>Kullanıcı Sayısı</a></li>
+
+            </ul>
+        </div>
+        <div class="wipoint_nedir_wrapper">
+            <div class="wipoint_tab_content wipoint_tab_content0 active">
+                <div class="left_area info">
+                    <h3>WiPoint Nedir?</h3>
+                    <span>Halka açık internet hizmeti verilen bölgelerde internet erişim işlemlerini denetleyebilmek için Mikrotik cihazları ile güçlendirilmiş Cloud Hotspot ürünüdür. Kullanıcılarınız ağınıza dahil olduğunda WiPoint giriş yöntemlerinden doğrulama gerçekleştirilerek internet erişimini sağlar.Wipoint SYSLOG Cloud loglama sistemi ile birlikte kullanıcı loglarını 5651 yasasına uygun bir şekilde saklamaktadır.</span>
+                    <span>Cafe, Restoran, Otel, Okul vb. kamusal alanlarda internet erişimi ve kontrolü için kullanıcıları tek tek manuel olarak oluşturmak yerine, belirlenmiş doğrulama yöntemleri ile kullanıcıların sisteme kendilerini kayıt ederek, belirlenmiş olan kontrol yöntemleriyle internet erişimlerini aktif edebilmelerini sağlayabilmektedir.</span>
+                    <span>Otel, Yurt, Pansiyon vb. yerlerde internet erişimini var olan misafir / personel takip programı ile entegre olarak çalıştırabilir, belirli bir kullanıcı kitlesine erişim izni sağlayabilirsiniz. İsterseniz manuel olarak kullanıcı işlemlerini gerçekleştirebilir, kullanıcılarınızı veya sisteminizi yönetici portalı üzerinden yönetebilir, raporlarınızı alabilir, hız ve kota limitleri içeren paketler oluşturabilirsiniz.</span>
+                </div>
+                <div class="right_area">
+                    <img src="assets/images/wipoint_nedir.png" alt="WiPoint Nedir?">
+                </div>
+            </div>
+            <div class="wipoint_tab_content wipoint_tab_content1">
+                <div class="left_area info yonetici_paneli">
+                    <h3>Yönetici Paneli</h3>
+                    <div class="yonetici_paneli_card_wrapper">
+                        <div class="info_card portal_info_card">
+                            <span> <img src="assets/images/wipoint_icon/dashboard.png" alt=""> </span>
+                            <h3> Portal Erişim Bilgileri</h3>
+                            <ul>
+                                <li> <p><span>URL</span> <a href="http://portal.wipoint.com.tr" target="_blank">http://portal.wipoint.com.tr</a> </p> </li>
+                                <li> <p>username: demo</p></li>
+                                <li> <p>password: demo</p></li>
+                                <li> <p>Demoyu incelemek için <a href="http://portal.wipoint.com.tr/login/demo" target="_blank">tıklayınız.</a> </p></li>
+                            </ul>
+                            <span class="note"> Not : Demo kullanıcısı yetkileri kısıtlıdır. </span>
+                        </div>
+                        <div class="info_card manager_info_card">
+                            <span> <img src="assets/images/wipoint_icon/manager.png" alt=""> </span>
+                            <h3> Yönetici İşlemleri</h3>
+                            <ul>
+                                <li><p> Kendinize alt yöneticiler oluşturabilirsiniz. </p></li>
+                                <li><p> Alt yöneticilerinizi görebilir, düzenleyebilirsiniz. </p></li>
+                                <li><p> Yöneticilerinize ait olduğunuz yetkilerden tanımlar yapabilirsiniz.</p></li>
+                                <li><p> Birden fazla Hotspot noktasına ait kullanıcılar oluşturabilirsiniz. </p></li>
+                            </ul>
+                        </div>
+                        <div class="info_card user_info_card">
+                            <span> <img src="assets/images/wipoint_icon/user.png" alt=""> </span>
+                            <h3> Kullanıcı İşlemleri</h3>
+                            <ul>
+                                <li><p> Kullanıcılarınızı listeleyebilir, filtreleyebilirsiniz. </p></li>
+                                <li><p> Yeni kullanıcılar ekleyip düzenleyebilirsiniz ( Sadece Portal üzerinden eklenen kullanıcılara müdahale edebilirsiniz ). </p></li>
+                                <li><p> Kullanıcı uzaklaştırma ( BAN ) yöntemini uygulayabilirsiniz. İstenilmeyen kullanıcıların erişimlerini engelleyebilirsiniz.</p></li>
+                                <li><p> Kullanıcılara ait kullanım geçmişlerini görüntüleyebilirsiniz. </p></li>
+                                <li><p> Entegre bir sistem kullanıyorsanız entegre kullanıcılarınızı listeleyebilirsiniz.</p></li>
+                                <li><p> Hızlı kullanıcı işlemleri ile hızlı kullanıcı oluşturabilirsiniz.</p></li> 
+                                <li><p> Hızlıca kullanıcı oluşturup tasarladığınız şablon ile çıktı alabilirsiniz.</p></li>
+                            </ul>
+                        </div>
+                        <div class="info_card report_info_card">
+                            <span> <img src="assets/images/wipoint_icon/list.png" alt=""> </span>
+                            <h3> Raporlar </h3>
+                            <ul>
+                                <li><p> Online kullanıcı raporlarını görebilirsiniz. </p></li>
+                                <li><p> Kullanıcılara ait trafik detaylarını görüntüleyebilirsiniz. </p></li>
+                                <li><p> Kullanıcıya ait kullanım geçmişlerine kullanılan tarife / pakete göre grafikler üzerinden kota takibi yapabilirsiniz. </p></li>
+                                <li><p> SMS raporlarınızı görüntüleyebilirsiniz. </p></li>
+                            </ul>
+                        </div>
+                        <div class="info_card hotspot_info_card">
+                            <span> <img src="assets/images/wipoint_icon/hotspot.png" alt=""> </span>
+                            <h3> Hotspot işlemleri </h3>
+                            <ul>
+                                <li><p> Hotspot sayfasının tasarımında değişikler yapabilirsiniz.</p> </li>
+                                <li><p> Üst, alt logo değişikliği</p> </li>
+                                <li><p> Arka plan ve iç plan tasarımlarıyla değişiklikler yapabilirsiniz.</p> </li>
+                                <li><p> Giriş seçeneklerine göre Paket tanımları yapabilirsiniz.</p> </li>
+                                <li><p> Hotspot karşılama ekranında dil işlemlerini özelleştirebilirsiniz.</p> </li>
+                            </ul>
+                        </div>
+                        <div class="info_card package_info_card">
+                            <span> <img src="assets/images/wipoint_icon/package.png" alt=""> </span>
+                            <h3> Raporlar </h3>
+                            <ul>
+                                <li><p> Kullanıcıların sisteme dahil olurken kullanmasını istediğiniz paketleri seçebilirsiniz. </p></li>
+                                <li><p> Kendinize ait kotalı veya kotasız paketler oluşturabilirsiniz. </p></li>
+                                <li><p> AKN sistemi henüz aktif değildir. </p></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wipoint_tab_content wipoint_tab_content2">
+                <div class="left_area info kullanici_sozlesmesi">
+                    <h3>Kullanıcı Sözleşmesi </h3>
+                    
+                        <h3>WİPOİNT İNTERNET ERİŞİM SÖZLEŞMESİ </h3>
+                        <span>KULLANICI, bu SÖZLEŞME ile tanınan hakkını, WİPOİNT’in yazılı izni olmaksızın hiçbir şekilde üçüncü kişilere bedelsiz de olsa devredemez, kiralayamaz, kullanımına ve/veya yararına sunamaz veya satamaz. WİPOİNT’in kullanılması, her zaman bu SÖZLEŞME’nin koşullarına tabidir.</span>
+                        <span>KULLANICI internet ortamında WİPOİNT internet erişim uygulamasına, KULLANICI tarafından verilen bilgilerin doğru olduğunu, bu bilgilere göre internet ortamında WİPOİNT CLOUD HOTSPOT sistemindeki kişisel bilgilerini sorgulama ve diğer işlemler için internet üzerinden kredi kartı, online işlemler, e-ticaret alış-verişleri, girilen kimlik bilgileri, diğer sosyal ağ kullanıcı hesapları ile yapacağı işlemlerde her türlü riskin KULLANICI tarafına ait olduğunu kabul eder.</span>
+                        <span>KULLANICI, WİPOİNT’in yürürlükte bulunan tüm ulusal ve uluslararası mevzuata, kamu düzenine ve genel ahlaka, internet kullanımına ilişkin kural ve yasalara uygun, üçüncü kişilerin haklarına saygılı şekilde kullanacağını kabul eder. KULLANICI ayrıca, Bilgi Teknolojileri ve İletişim Kurumu Telekomünikasyon İletişim Başkanlığı’nın görev ve yetkileri kapsamında yapılacak tüm iletişimin tespiti, dinlenmesi, sinyal bilgilerinin değerlendirilmesi ve bunların kayda alınması işlemleri hakkındaki tüm sorumluluk ile bu konu hakkındaki 5651 Sayılı İnternet Ortamında Yapılan Yayınların Düzenlenmesi ve Bu Yayınlar Yoluyla İşlenen Suçlarla Mücadele Edilmesi Hakkında Kanun ve diğer ilgili Kanunlar ile İnternet Ortamında Yapılan Yayınların Düzenlenmesine Dair Usul ve Esaslar Hakkında Yönetmelik ve diğer ilgili yönetmeliklere uygun kullanım konusundaki sorumluluğun kendisine ait olacağını kabul ve taahhüt eder.</span>
+                        <span>WİPOİNT tarafından sunulan hizmetlerin kullanımı için KULLANICI’ya tahsis edilen her türlü kullanıcı adı ve şifresinin güvenliğinden ve kullanımından KULLANICI sorumludur. KULLANICI, kullanıcı adı ve şifresinin çalınması, kaybolması hallerinde bunların değiştirilmesi için derhal WİPOİNT’e bildirimde bulunmakla yükümlüdür. Şifresinin veya kullanıcı bilgilerinin yetkisiz kullanımından doğacak idari, hukuki, mali ve cezai sorumluluk KULLANICI’ya aittir.</span>
+                        <span>KULLANICI, WİPOİNT ile birlikte veya aracılığıyla sunulan içeriğin hiçbir unsurunu değiştirmemeyi, uyarlamamayı, çevirmemeyi, satmamayı; bu içerik/ürün/servisten türev veya işleme eserler hazırlamamayı, bu içerik/ürün/servisin düzenini bozmamayı, bu hizmet kapsamında kullandığı her türlü içeriği, görüntüleri, klipleri, müzik eser veya kompozisyonunu söz ve besteyi bu SÖZLEŞME dışındaki amaçlar dışında kullanmamayı, değiştirmemeyi, bütünlüğünü bozacak şekilde ters mühendislik yapmamayı ve herhangi bir mecrada yayınlamaya teşebbüs etmeyeceğini kabul eder.</span>
+                        <span>İNTERNETTEN TEKNOLOJİ, WİPOİNT ve diğer sistemlerinin kullanımı sırasında KULLANICI / CİHAZ tarafında oluşabilecek sorun veya zararlardan hiçbir şekilde sorumlu değildir.</span>
+                        <span>KULLANICI, WİPOİNT kullanıldığı esnada hizmete dair yaşanabilecek herhangi bir durum ile ilgili doğabilecek tüm riskleri kabul ederek kullanacağını kabul eder.</span>
+                        <span>WİPOİNT dağıtımları ve internet erişim noktaları üzerinden işlenebilecek olan herhangi bir suç unsurunda; IP ve MAC adresinin veya adreslerinin karşılaştırılması sonucunda WİPOİNT hesabında ve/veya hesaplarında söz konusu bir eşleşmenin olması durumunda, oluşabilecek suçlamaların WİPOİNT tarafından herhangi bir şekilde üstlenilmeyeceğini kabul eder ve suçlamaların KULLANICI’ ya ait olduğunu temin eder.</span>
+                        <span>WİPOİNT’in eksik çalışması, hiç çalışmaması ya da yanlış çalışması veya üçüncü kişilerin fiil veya işlemleri ya da WİPOİNT’in kullanımından kaynaklanan başka herhangi bir sebeple veri kaybı veya bilgisayar sistemi hasarları KULLANICI’nın sorumluluğunda olup WİPOİNT’in bu hususta herhangi bir sorumluluğu bulunmamaktadır. KULLANICI, WİPOİNT bağlantısı sırasında herhangi bir zararın meydana gelmemesi için güvenlik duvarı ve virüs koruyucu gibi gerekli güvenliğin sağlanması konusundaki sorumluluğun kendisinde olduğunu, WİPOİNT’in KULLANICI’ye hiçbir şekilde bir garanti ya da taahhüt vermediğini kabul eder.</span>
+                        <span>WİPOİNT’e giriş yaparken kimlik doğrulaması için KULLANICI tarafından girilen kullanıcı adı, şifre, T.C Kimlik No ve bilgileri ,  WİPOİNT kullanıcı adı ve WİPOİNT şifresinin veya bilgilerinin doğruluğundan, güvenliğinden, saklanması, üçüncü kişilerin bilgisinden uzak tutulması ve kullanılması durumlarıyla ilgili her türlü husus tamamen KULLANICI sorumlu olup girilen bilgilerdeki yanlışlıklardan ve/veya KULLANICI bilgilerinin bir başkası tarafından ele geçirilerek/öğrenilerek kullanılması yoluyla WİPOİNT’e KULLANICI adına erişimden WİPOİNT sorumlu değildir. KULLANICI’ ların, WİPOİNT erişim araçlarının (kullanıcı adı, şifre, cep telefonu ve kimlik bilgileri vb.) güvenliği, saklanması, üçüncü kişilerin bilgisinden uzak tutulması, kullanılması gibi hususlardan kaynaklanan KULLANICI’ nın ve/veya üçüncü kişilerin uğradığı veya uğrayabileceği zararlarla ilgili olarak WİPOİNT’in, doğrudan veya dolaylı, herhangi bir sorumluluğu yoktur. Bu kapsamda KULLANICI WİPOİNT’ den zarar, tazminat vb. her ne ad altında olsun herhangi bir talepte bulunamaz.</span>
+                        <span>WİPOİNT erişim noktasından erişim gerçekleştirmek için bu sözleşmedeki şart ve koşulları okuduğunu, anladığını ve kabul ettiğini beyan eder.</span>
+                        <span class="kullanici_sozlesmesi_firma_bilgisi">
+                            <span>WİPOİNT CLOUD HOTSPOT YÖNETİMİ</span>
+                            <span>INTERNETTEN Teknoloji San. Tic. Ltd. Şti.</span>
+                        </span>
+                    
+                    <span><b>“WiPoint WiFi kullanıcıları kayıt olurken bu sözleşmeyi kabul etmek zorundadırlar. Aksi takdirde kullanıcılar kayıt olamazlar..”</b></span>
+                </div>
+            </div>
+            <div class="wipoint_tab_content wipoint_tab_content3">
+                <div class="left_area info">
+                    <h3>Kullanıcı Sayısı</h3>
+                    <span>WiPoint Cloud Hotspot sisteminde aktif online kullanıcı sayısı esas alınmaktadır. </span>
+                    <h3>Kullanıcı sayısı nedir ve nasıl hesaplanır?</h3>
+                    <span>Kullanıcı sayısı sisteminize bağlı olan IP adresi bağlantısı sağlayan toplam cihaz sayısıdır.</span>
+                    <span>Bir kafe işlettiğinizi düşünelim. 50 kişilik bir kafe dolu olduğunda  bağlanan cihaz sayısı 50 adet olduğunu varsayalım. Kullanıcılar cep telefonu, tablet ve bilgisayar olarak bağlantı gerçekleştirirler. İşletmenizde kullandığınız cihazlarla ( yazıcı, tablet, bilgisayar, pos cihazı, vb. ) ve personellerinizle ortalama online kullanıcı sayınız 100 kullanıcı olmaktadır. Tavsiye ettiğimiz paket seçeneklerinden  WIPOINT-100 ( 100 Online Kullanıcılı ) paketimizi tercih etmelisiniz.</span>
+                    <span>Esas alınan kullanıcı sayısı değil,  aktif online cihaz sayısıdır.  Her bağlanan cihaz 1 kullanıcıdır.</span>
+                </div>
+                <div class="right_area">
+                    <img src="assets/images/wipoint_nedir.png" alt="WiPoint Nedir?">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="footer_section">
+        <div class="footer_wrapper">
+            <div class="footer_block_wrapper">
+                <div class="footer_block">
+                    <img src="/assets/images/logo.png" alt="">
+                    <ul class="aboutUs_menu">
+                        <li><a href="#">Biz Kimiz</a></li>
+                        <li><a href="#">Teklif Al</a></li>
+                        <li><a href="#">Çözüm Ortaklarımız</a></li>
+                        <li><a href="#">Bizi Tercih Edenler</a></li>
+                    </ul>
+                </div>
+                <div class="footer_block">
+                    <h3>Entegrasyonlar</h3>
+                    <ul class="aboutUs_menu">
+                        <li> <i class='bx bx-chevron-right' ></i> <a href="#">Veri Tabanı Entegrasyonu</a></li>
+                        <li> <i class='bx bx-chevron-right' ></i> <a href="#">Dosya Tabanlı Entegrasyon</a></li>
+                        <li> <i class='bx bx-chevron-right' ></i> <a href="#">Sosyal Medya Entegrasyonu</a></li>
+                        <li> <i class='bx bx-chevron-right' ></i> <a href="#">Düzenlenebilir Giriş Seçenekleri</a></li>
+                    </ul>
+                </div>
+                <div class="footer_block">
+                    <h3>İletişim</h3>
+                    <ul class="aboutUs_menu">
+                        <li><a href="tel:08506500500"> Telefon: 0 (850) 650 0500</a></li>
+                        <li><a href="tel:02626446663"> Telefon: 0 (262) 644 6663</a></li>
+                        <li><a href="mailto:bilgi@wipoint.com.tr"> Mail: bilgi@wipoint.com.tr</a></li>
+                        <li><a href="#">Demo Talebinde Bulun</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer_icons_wrapper">
+                <div class="social_media">
+                    <a target="blank_" href="https://twitter.com/wicomtr"><i class='bx bxl-twitter'></i></a>
+                    <a target="blank_" href="https://www.instagram.com/internetten_teknoloji/"><i class='bx bxl-instagram-alt' ></i></a>
+                    <a target="blank_" href="https://www.facebook.com/WiPoint-Hotspot-Cloud-426349994388421/"><i class='bx bxl-facebook' ></i></a>
+                </div>
+                 <div class="footer_logos">
+                    <a target="blank_" href="http://internetten.com.tr"><img src="assets/images/footer_logos/internetten.png" alt="İnternetten Teknoloji"></a>
+                    <a target="blank_" href="https://www.wi.com.tr/ubiquiti" class="ubiquiti"><img src="assets/images/footer_logos/ubiquiti.png" alt="Ubiquiti"></a>
+                    <a target="blank_" href="https://www.wi.com.tr/mikrotik"><img src="assets/images/footer_logos/mikrotik.png" alt="Mikrotik"></a>
+                    <a target="blank_" href="https://wi.com.tr/"><img src="assets/images/footer_logos/wi.png" alt="wi.com.tr"></a>
+                 </div>
+            </div>
+        </div>
+       </section>
+</body>
+</html>

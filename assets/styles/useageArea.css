@@ -1,0 +1,114 @@
+.usage_areas_section{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.useage_area_wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+}
+.useage_area_info{
+    width: var(--page-width);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+}
+.useage_area_info h3{
+    font-size: 45px;
+    font-weight: 700;
+    color: var(--black);
+}
+.useage_area_info span{
+    color: var(--g40);
+    line-height: 1.5em;
+    padding: 0 30px;
+    text-align: center;
+}
+.useage_area_blog{
+    grid-gap: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(22rem,1fr));
+    width: var(--page-width);
+    margin: auto;
+}
+
+a.useage_area_card {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    cursor: pointer;
+    transition: all .5s ease;
+}
+a.useage_area_card:hover{
+    box-shadow: 4.871px 34.659px 30px 0px rgb(0 0 0 / 6%);
+}
+a.useage_area_card div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+span.useage_area_img {
+    display: flex;
+    width: 80px;
+    border-radius: var(--border-radius);
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+}
+.hotel span.useage_area_img {
+    background-color: #FFF2DB;
+}
+.school span.useage_area_img{
+    background-color: #F6D8D3;
+}
+.dorm span.useage_area_img{
+    background-color: #EAFAE3;
+}
+.hospital span.useage_area_img{
+    background-color: #CCEFFF;
+}
+.cafe span.useage_area_img{
+    background-color: var(--g95);
+}
+.restaurant span.useage_area_img{
+    background-color: #CED9E1;
+}
+
+span.useage_area_content {
+    font-size: 14px;
+    color: var(--g40);
+    line-height: 1.5em;
+}
+@media screen and (max-width: 1000px){
+    .useage_area_info h3{
+        font-size: 30px !important;
+    }
+    .useage_area_info,
+    .useage_area_blog{
+        width: 100%;
+    }
+    a.useage_area_card{
+        padding: 0 10px;
+    }
+    .useage_area_info span{
+        text-align: start;
+        padding: 0 10px;
+    }
+    .useage_area_blog{
+        display: flex;
+        flex-direction: column;
+    }
+    .customer_section h3{
+        font-size: 30px !important;
+    }
+    .swiper-slide{
+        width: 140px !important;
+    }
+}

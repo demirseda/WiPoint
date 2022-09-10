@@ -1,0 +1,129 @@
+.meet_wipoint_section{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.meet_wipoint_wrapper{
+    width: var(--page-width);
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+.meet_wipoint_info{
+    width: var(--page-width);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+}
+.meet_wipoint_info h3{
+    font-size: 45px;
+    font-weight: 700;
+    color: var(--black);
+}
+.meet_wipoint_info span{
+    color: var(--g40);
+    line-height: 1.5em;
+    padding: 0 30px;
+    text-align: center;
+}
+.sss_wrapper {
+    display: flex;
+    gap: 35px;
+}
+.sss_wrapper .question_type{
+    width: 25%;
+    background-color: var(--g95);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 30px;
+    margin: 0;
+    border-radius: var(--border-radius);
+}
+.sss_wrapper .question_type .tabs{
+    font-weight: 600;
+    color: var(--black);
+    transition: all .5s ease;
+    cursor: pointer;
+}
+.sss_wrapper .question_type .tabs:hover{
+    color: var(--primary);
+}
+.sss_wrapper .question_type .tabs.active{
+    color: var(--primary);
+}
+.sss_wrapper .sss_content{
+    width: 75%;
+}
+.sss_wrapper .sss_content .content{
+    display: none
+}
+.sss_wrapper .sss_content .content.active{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: var(--g95);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    transition: all .5s ease;
+    animation: animateOpacity 1s;
+}
+.sss_wrapper .sss_content .content.active a{
+    font-weight: 600;
+    color: var(--primary);
+    text-decoration: underline;
+}
+.sss_wrapper .sss_content .content.active span{
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    color: var(--g50);
+    font-size: 14px;
+    line-height: 1.50em;
+}
+
+@keyframes animateOpacity{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+
+}
+@media screen and (max-width: 1000px){
+    .meet_wipoint_info h3{
+        font-size: 30px;
+    }
+    .meet_wipoint_info span{
+        padding: 0 10px;
+        text-align: start;
+    }
+    .meet_wipoint_wrapper,
+    .sss_wrapper .question_type .tabs{
+        padding: 0 10px;
+    }
+    .meet_wipoint_wrapper,
+    .meet_wipoint_info{
+        width: 100%;
+    }
+    .sss_wrapper{
+        flex-direction: column;
+    }
+    .sss_wrapper .question_type{
+        padding: 10px 0;
+        width: 100%;
+    }
+    .sss_wrapper .sss_content{
+        width: 100%;
+        padding: 0;
+    }
+    .sss_wrapper .sss_content .content.active span,
+    .sss_wrapper .sss_content .content.active{
+        padding: 10px;
+        gap: 20px;
+    }
+}

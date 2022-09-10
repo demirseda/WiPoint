@@ -1,0 +1,175 @@
+.login_options_section{
+    height: 100vh;
+    display: flex;
+}
+.login_options_wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    width: var(--page-width);
+    margin: auto;
+    
+}
+.login_options_wrapper .tabs_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.login_options_wrapper .tabs_wrapper .tabs{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.login_options_wrapper .tabs_wrapper .tab_line{
+    color: var(--primary);
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: -4px;
+}
+.login_options_wrapper .tabs_wrapper h3{
+    font-size: 40px;
+}
+.login_options_wrapper .tabs_wrapper .tabs > span{
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border-radius: var(--border-radius);
+    padding: 0px 10px;
+}
+.login_options_wrapper .tabs_wrapper .tabs span:hover{
+    transition: all .5s ease;
+    background-color: var(--primary);
+    color: var(--white);
+}
+.login_options_wrapper .tabs_wrapper .tabs span:hover .tab_line{
+    color: var(--white);
+    transition: all .5s ease;
+}
+.login_options_section .tabs_content_wrapper{
+    display: flex;
+}
+.login_options_section .login_menu{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+.login_options_section .login_menu_title{
+    font-weight: 600;
+    font-size: 30px;
+}
+.login_options_section .login_select_menu{
+    display: none;
+}
+.login_options_section .login_select_menu.active{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    background-color: var(--white);
+    top: 26px;
+    box-shadow: 0 0 20px var(--g80);
+    border-radius: var(--border-radius);
+
+}
+#login_options_select{
+    width: 290px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: var(--border);
+    border-radius: var(--border-radius);
+    color: var(--g50);
+    cursor: pointer;
+}
+.login_options_section .login_select_menu.active li{
+    padding: 7px 15px;
+    color: var(--g50);
+    cursor: pointer;
+    transition: all .5s ease;
+}
+.login_options_section .login_select_menu.active li:hover{
+    color: var(--primary);
+}
+.content.hide{
+    display: none;
+}
+.content.show{
+    color: var(--g50);
+    line-height: 1.5em;
+    font-size: 17px;
+}
+.tab_content_image{
+    flex: 1 1 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.tab_content_image::after{    
+    content: "";
+    background-image: url(/assets/images/loginOptions/mobile_bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 60px;
+    width: 102%;
+    height: 100%;
+    z-index: -1;
+}
+.tab_content{
+    flex: 1 1 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+.image_content{
+    width: 260px;
+}
+.image_content.tablet{
+    width: 50%;
+}
+.image_content.desktop{
+    width: 70%;
+}
+@media screen and (max-width: 1000px){
+    .login_options_wrapper .tabs_wrapper h3{
+        font-size: 30px;
+    }
+    .login_options_wrapper{
+        width: 100%;
+        padding: 10px;
+    }
+    .login_options_wrapper .tabs_wrapper{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .login_options_wrapper .tabs_wrapper .tabs{
+        gap: 0;
+    }
+    .login_options_section .tabs_content_wrapper{
+        flex-direction: column;
+    }
+    .login_options_section .login_menu{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    #login_options_select{
+        width: auto;
+        padding: 0 10px;
+    }
+    .content.show{
+        width: 100%;
+    }
+    .tab_content{
+        gap: 20px;
+    }
+}

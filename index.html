@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    
+    <!--LOTTIE-->
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+     <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- BOXICON -->
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet" />
+    
+    <!-- GOOGLE FONTS Quicksand -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+   <!-- Link Swiper's CSS -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+
+    <!-- Animated -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/styles/main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/styles/navbar.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/styles/slider.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/styles/useageArea.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/styles/swiper.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/styles/loginOptions.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/styles/trailer.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/styles/meetWipoint.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/styles/footer.css" />
+
+    <script src="assets/js/main.js"></script>
+
+    <title>WiPoint Cloud Hotspot</title>
+</head>
+<script>
+    $(document).ready(function(){
+        localStorage.setItem('device', '1');
+        var totalSlider = $(".slider_section").children().length - 2;
+       
+        var  slideIndex = 1;
+        var setSlideIndex = 1;
+        $.nextSlide = function(){
+            $(`.slider${slideIndex}`).removeClass("slide_active");
+            $(`.slider${slideIndex}`).addClass("slide");
+
+            if(slideIndex !== totalSlider)
+            {
+                slideIndex = slideIndex+1 ;
+            }
+            else if (slideIndex === totalSlider){
+                slideIndex = 1 ;
+            }
+            $(`.slider${slideIndex}`).addClass("slide_active");
+            $(`.slider${slideIndex}`).removeClass("slide");
+
+        }
+        $.prevSlide = function(){
+            $(`.slider${slideIndex}`).removeClass("slide_active");
+            $(`.slider${slideIndex}`).addClass("slide");
+            if(slideIndex !== 1){
+                slideIndex = slideIndex - 1;
+            }
+            else if(slideIndex === 1){
+                slideIndex = totalSlider ;
+            }
+            $(`.slider${slideIndex}`).addClass("slide_active");
+            $(`.slider${slideIndex}`).removeClass("slide");
+        }
+       
+        setInterval(function() {
+            $.nextSlide();
+        }, 8000);
+       
+        for(var i = 1; i<=totalSlider; i++){
+            
+            $(".dots").append("<span class='dot'></span>");
+        }
+
+        // Swiper: Slider
+        new Swiper('.swiper-container', {
+            loop: true,
+            slidesPerView: 7,
+            paginationClickable: true,
+            spaceBetween: 20,
+            autoplay: {
+                delay: 2000,
+            },
+
+           
+        });
+        if($(window).width() < 1000){
+            new Swiper('.swiper-container', {
+            loop: true,
+            slidesPerView: 3,
+            paginationClickable: true,
+            spaceBetween: 20,
+            autoplay: {
+                delay: 2000,
+            },
+
+           
+        });
+        }
+
+        $("#login_options_select").click(function(){
+            $(".login_select_menu").toggleClass("active");
+        });
+
+        $( document ).on( "click", ".select_wrapper .login_select_menu li", function(){
+            $(this).parents('.select_wrapper').find('span').text($(this).text());
+            $(".login_select_input").val($(this).val());
+            $(".login_select_menu").removeClass("active");
+            $(".login_menu_title").text($(this).text());
+            $(`.content`).removeClass("show")
+            $(`.content`).addClass("hide")
+            $(`.content${$(this).val()}`).removeClass("hide");
+            $(`.content${$(this).val()}`).addClass("show");
+
+           var deviceKey = localStorage.getItem('device');
+            if(deviceKey == 1){
+                $(`.image_content`).attr("src",`/assets/images/loginOptions/mobile_content_${$(this).val()}.png`);
+            }
+            else if(deviceKey == 2){
+                $(`.image_content`).attr("src",`/assets/images/loginOptions/tablet_content_${$(this).val()}.png`);
+            }
+            else if(deviceKey == 3){
+                $(`.image_content`).attr("src",`/assets/images/loginOptions/desktop_content_${$(this).val()}.png`);
+            }
+           
+	    });
+        $(".device_tab").click(function(){
+            var loginKey = $(".login_select_input").val();
+            var deviceKey = $(this).attr("data");
+            localStorage.setItem('device', deviceKey);
+            if(deviceKey == 1){
+                $(".image_content").removeClass("desktop");
+                $(".image_content").removeClass("tablet");
+                $(".image_content").attr("src",`/assets/images/loginOptions/mobile_content_${loginKey}.png`);
+            }
+            else if(deviceKey == 2){
+                $(".image_content").addClass("tablet");
+                $(".image_content").removeClass("desktop");
+                $(".image_content").attr("src",`/assets/images/loginOptions/tablet_content_${loginKey}.png`);
+            }
+            else if(deviceKey == 3){
+                $(".image_content").addClass("desktop");
+                $(".image_content").removeClass("tablet");
+                $(".image_content").attr("src",`/assets/images/loginOptions/desktop_content_${loginKey}.png`);
+            }
+            
+        });
+
+        $( document ).delegate( "#trailer_video_icon", "click", function(event){
+            event.stopPropagation();
+            $(".trailer_video_modal").css("display","flex");
+            $(".trailer_video_modal .modal_content").html( '<iframe width="100%" height="445" src="https://www.youtube.com/embed/suod8fpbI6Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>' );
+        });	
+
+        $(document).on("click", function(event) {
+            $(".trailer_video_modal").css("display","none");
+            $(".trailer_video_modal .modal_content").html(' ');
+        });
+        $("#modal_close").click(function(){
+            $(".trailer_video_modal").css("display","none");
+            $(".trailer_video_modal .modal_content").html(' ');
+        });
+
+
+        /*SORULAR*/
+        $(".question_type li").click(function(){
+            $(".question_type li, .sss_content .content").removeClass("active");
+            $(this).addClass("active");
+            $(`.sss_content .content${$(this).index()}`).addClass("active");
+        });
+    });
+</script>
+<body>
+    <section class="navbar_section">
+        <div class="navbar_top">
+            <div class="social_media">
+                <a target="blank_" href="https://twitter.com/wicomtr"><i class='bx bxl-twitter'></i></a>
+                <a target="blank_" href="https://www.instagram.com/internetten_teknoloji/"><i class='bx bxl-instagram-alt' ></i></a>
+                <a target="blank_" href="https://www.facebook.com/WiPoint-Hotspot-Cloud-426349994388421/"><i class='bx bxl-facebook' ></i></a>
+            </div>
+            <div class="navbar_demo">
+                <span>WiPoint Cloud Hotspot, ücretsiz deneyin!</span>
+                <a href="#" class="btn btn_border demo_btn">Demo</a>
+            </div>
+        </div>
+        <div class="navbar_menu">
+            <div class="nav_responsive_menu"><i class='bx bx-menu-alt-left'></i></div>
+            <div class="logo_wrapper">
+                <a href="index.html">WiRadius</a>
+               
+            </div>
+            <div class="navbar_wrapper">
+                
+                <ul>
+                    <div class="navbar_header_res">
+                        <a href="index.html">WiRadius</a>
+                        <span class="navbar_res_menu_close"><i class="bx bx-x"></i></span>
+                    </div>
+                    <li> <a href="wipoint-nedir.html">WiPoint</a></li>
+                    <li>
+                        <a href="#"><span>5651 Yasası</span> <i class='bx bx-chevron-down'></i></a>
+                        
+                    </li>
+                    <li>
+                        <a href="#"><span>Entegrasyonlar</span><i class='bx bx-chevron-down'></i> </a>
+                    </li>
+                    <li>
+                        <a href="#"><span>Giriş Seçenekleri</span><i class='bx bx-chevron-down'></i> </a>
+                    </li>
+                    <li> <a href="prices.html"><span>WiPoint Paketleri</span></a></li>
+                    <li> <a href="contact.html">İletişim</a></li>
+                </ul>
+            </div>
+        </div>
+        
+    </section>
+    <section class="slider_section">
+        <div>
+            <a class="btn_prev" onclick="$.prevSlide();"><i class="bx bx-chevron-left"></i></a>
+            <a class="btn_next" onclick="$.nextSlide();"><i class="bx bx-chevron-right"></i></a>
+        </div>
+        <div class="slider1 slide_active">    
+            <div class="slider_content animation_left">
+                <h3 class="slider_title">WiPoint Kullanım Zamanı Belirleme</h3>
+                <span class="slider_description">Tanımlanan zamanlar arasında kullanıcıların giriş yapmasını sağlar! Zamanlayıcıyı gün ya da saat olarak ayarlayabilmek mümkün!</span>
+                <div class="slider_buttons">
+                    <a href="#" class="btn btn_fill">Ücretsiz Deneyin</a>
+                    <a href="#" class="btn btn_border">Detaylı Bilgi Alın</a>
+                </div>
+            </div>
+            <div class="slider_image animation_right">
+                <img src="/assets/images/slide_1_image.png" alt="">
+            </div>
+        </div>
+        <div class="slider2 slide">
+            <div class="slider_content animation_left">
+                <h3 class="slider_title">Size Özel Tema Seçimi</h3>
+                <span class="slider_description">Temalar içinden sizin için uygun olanı seçebilirsiniz!</span>
+                <div class="slider_buttons">
+                    <a href="#" class="btn btn_fill">Ücretsiz Deneyin</a>
+                    <a href="#" class="btn btn_border">Detaylı Bilgi Alın</a>
+                </div>
+            </div>
+            <div class="slider_image animation_right">
+                <img src="/assets/images/slide_2_image.png" alt="">
+            </div>
+        </div>
+        <div class="slider3 slide">
+            <div class="slider_content animation_left">
+                <h3 class="slider_title">Responsive Uyumluluk </h3>
+                <span class="slider_description">Kullanılabilirliği ve memnuniyeti sağlamak için cihazlar arası responsive tasarım sağlanmıştır!</span>
+                <div class="slider_buttons">
+                    <a href="#" class="btn btn_fill">Ücretsiz Deneyin</a>
+                    <a href="#" class="btn btn_border">Detaylı Bilgi Alın</a>
+                </div>
+            </div>
+            <div class="slider_image animation_right">
+                <img src="/assets/images/slide_3_image.png" alt="">
+            </div>
+        </div>
+        <div class="slider4 slide">
+            <div class="slider_content animation_left">
+                <h3 class="slider_title"> Güvenli İnternet Erişimi ile Tanışın </h3>
+                <span class="slider_description"> Müşterileriniz, personellerinizden wi-fi şifresi istemeden doğrulama gerçekleştirerek güvenli bir şekilde internet erişimi gerçekleştirmesini sağlar.</span>
+                <div class="slider_buttons">
+                    <a href="#" class="btn btn_fill">Ücretsiz Deneyin</a>
+                    <a href="#" class="btn btn_border">Detaylı Bilgi Alın</a>
+                </div>
+            </div>
+            <div class="slider_image animation_right">
+                <img src="/assets/images/slide_4_image.png" alt="">
+            </div>
+        </div>
+        
+        <div class="dots"></div>
+
+    </section>
+    <section class="usage_areas_section">
+        <div class="useage_area_wrapper">
+            <div class="useage_area_info">
+                <h3>Kullanım Alanları</h3>
+                <span>Cafe, Restoran, Otel, Park, Dinlenme tesisi vb. toplu kullanım alanlarında internet erişimi ve kontrolü için kullanıcıları tek tek manuel olarak oluşturmak yerine, belirlenmiş doğrulama yöntemleri ile kullanıcıların sisteme kendilerini kayıt ederek, belirlenmiş olan kontrol yöntemleriyle internet erişimlerini aktif etmektedir.</span>
+            </div>
+            <div class="useage_area_blog">
+                <a href="#" class="useage_area_card">
+                    <div class="hotel">
+                        <span class="useage_area_img"><img src="assets/images/hotel.png" alt=""></span>
+                        <h3 class="useage_area_title">Otel</h3>
+                    </div>
+                    <span class="useage_area_content"> Misafirlerinizin, otel yazılımınıza entegre olarak güvenli ve kontrollü bir şekilde, doğrulama sağlayarak internet erişimini gerçekleştirir.</span>
+
+                </a>
+                <a href="#" class="useage_area_card">
+                    <div class="school">
+                        <span class="useage_area_img"><img src="assets/images/school.png" alt=""></span>
+                        <h3 class="useage_area_title">Okul</h3>
+                    </div>
+                    <span class="useage_area_content">  Öğrencilerin okul içerisinde internette bulunan zararlı ve istenmeyen içeriklerden izole edilerek kontrollü ve limitlendirilebilir bir şekilde internet erişimi gerçekleştirilmesini sağlar.</span>
+                </a>
+                <a href="#" class="useage_area_card">
+                    <div class="dorm">
+                        <span class="useage_area_img"><img src="assets/images/dorm.png" alt=""></span>
+                        <h3 class="useage_area_title">Yurt</h3>
+                    </div>
+                    <span class="useage_area_content"> Yurt/misafirhane içerisinde  bulunan  takip sistemine entegre edilerek, öğrencilerin ve personellerin güvenli ve kontrollü bir şekilde internet erişimi gerçekleştirmesini sağlar.</span>
+                </a>
+                <a href="#" class="useage_area_card">
+                    <div class="hospital">
+                        <span class="useage_area_img"><img src="assets/images/hospital.png" alt=""></span>
+                        <h3 class="useage_area_title">Hastane</h3>
+                    </div>
+                    <span class="useage_area_content"> Hastane, Sağlık Ocağı gibi tedavi merkezlerinde hastaneye gelen kişilerin 5651 yasasına uygun şekilde kayıtları tutularak, internet erişimi gerçekleştirmesini sağlar.</span>
+                </a>
+            
+                <a href="#" class="useage_area_card">
+                    <div class="cafe">
+                        <span class="useage_area_img"><img src="assets/images/cafeteria.png" alt=""></span>
+                        <h3 class="useage_area_title">Kafe</h3>
+                    </div>
+                    <span class="useage_area_content"> Müşterileriniz, personellerinizden wi-fi şifresi istemeden doğrulama gerçekleştirerek güvenli bir şekilde internet erişimi gerçekleştirmesini sağlar.</span>
+                </a>
+                <a href="#" class="useage_area_card">
+                    <div class="restaurant">
+                        <span class="useage_area_img"><img src="assets/images/restaurant.png" alt=""></span>
+                        <h3 class="useage_area_title">Restoran</h3>
+                    </div>
+                    <span class="useage_area_content"> Müşterileriniz, giriş seçeneklerinden tercih ettiğiniz internet ağına bağlanarak güvenli ve kontrollü bir şekilde internet erişimi gerçekleştirmesini sağlar.</span>
+                </a>
+            </div>
+        </div>
+        
+    </section>
+    <section class="customer_section">
+        <h3>Bizi Tercih Edenler</h3>
+        <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="/assets/images/customers/trendlife_hotels.png" alt=""></div>
+                <div class="swiper-slide"><img src="/assets/images/customers/comnet.png" alt=""></div>
+                <div class="swiper-slide"><img src="/assets/images/customers/dadyanet.png" alt=""></div>
+                <div class="swiper-slide"><img src="/assets/images/customers/ateksis.png" alt=""></div>
+                <div class="swiper-slide"><img src="/assets/images/customers/ikikule.png" alt=""></div>
+                <div class="swiper-slide"><img src="/assets/images/customers/saricay.png" alt=""></div>
+                <div class="swiper-slide"><img src="/assets/images/customers/abc.png" alt=""></div>
+            </div>
+        </div>
+    </section>
+    <section class="login_options_section">
+        <div class="login_options_wrapper">
+            <div class="tabs_wrapper">
+                <h3>WiPoint Giriş Seçenekleri</h3>
+                <div class="tabs">
+                    <span class="device_tab" data="1">
+                        <span class="tab_line">//</span> Mobil
+                    </span>
+                    <span class="device_tab" data="2">
+                        <span class="tab_line">//</span> Tablet
+                    </span>
+                    <span class="device_tab" data="3">
+                        <span class="tab_line">//</span> Desktop
+                    </span>
+                </div>
+            </div>
+            <div class="tabs_content_wrapper">
+                <div class="tab_content_image ">
+                    <img src="/assets/images/loginOptions/mobile_content_1.png" alt="" class="image_content">
+                </div>
+                <div class="tab_content">
+                    <div class="login_menu">
+                        <span class="login_menu_title">Manuel Kullanıcı Girişi</span>
+                        <div class="select_wrapper">
+                            <div class="select" id="login_options_select">
+                                <span>Manuel Kullanıcı Girişi</span>
+                                <i class='bx bx-chevron-down'></i>
+                            </div>
+                            <input type="hidden" class="login_select_input" value="1">
+                            <ul class="login_select_menu">
+                                <li value="1">Manuel Kullanıcı Girişi</li>
+                                <li value="2">T.C Kimlik Numarası İle Doğrulama</li>
+                                <li value="3">SMS ile Doğrulama</li>
+                                <li value="4">Entegrasyon Girişi</li>
+                                <li value="5">Sosyal Medya İle Doğrulama</li>
+                                <li value="6">E-Mail ile Yönetici Onayı</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <span class="content content1 show">Manuel Kullanıcı Giriş seçeneği ile kullanıcılar kendi kullanıcılarını oluşturup giriş yapamazlar. Sistem yöneticisi tarafından oluşturulan kullanıcı adı ve şifreler ile birlikte internet erişimi sağlayabilirler.</span>
+                    <span class="content content2 hide">Ad, Soyad, T.C. Kimlik Numarası ve Doğum yılını girerek tckimlik.nvi.gov.tr  üzerinden online olarak doğrulama sağlanmaktadır. Kullanıcının girmiş olduğu T.C Kimlik bilgileri doğrulanması ile internet erişim sağlayabilirler.</span>
+                    <span class="content content3 hide">
+                        Kullanıcı hotspot ağına dahil olduktan sonra Cep telefonu bilgisini girerek, SMS olarak gelen onay kodu ile doğrulama yapıp internete erişim gerçekleştirirler.
+                        Çalışmakta olduğunuz SMS Operatörü API desteği  olması durumunda sisteme entegre edilebilir.
+                        SMS hizmeti sizlere ait ise ziyaretçilerinize toplu SMS kampanyaları oluşturabilirsiniz.                
+                    </span>
+                    <span class="content content4 hide">
+                        İstenilen senaryoya göre sadece entegrasyon kodu veya entegrasyon kodu ile şifre beraber kullanılabilmektedir.
+                        MsSQL, MYSQL, ORACLE, FIREBIRD, ACCESSDB veritabanlarına bağlantı sağlanabilmektedir.
+                        XML ve TEXT dosyaları ile entegrasyon sağlanmaktadır.
+                        Entegre sistemlerde verilecek olan bilgilerle göre parametrik yapılandırma sağlanabilir.
+                    </span>
+                    <span class="content content5 hide">
+                        Facebook, Twitter, Instagram, Linkedin, Pinterest sosyal medya platformlarında uygulama izni özelliği kullanılarak kullanıcıların mümkün olan bilgileri alınarak, 
+                        kullanıcı adına kayıt oluşturulup internet erişimi sağlanmaktadır.
+                    </span>
+                    <span class="content content6 hide">
+                        İşletmenizde ziyaretçileriniz sisteme dahil olduklarında Yönetim birimi tarafından onaylama mekanizması gerekiyor ise bu giriş seçeneği işletmenize oldukça uygun.
+                        Ziyaretçi giriş formunu doldurur ve yönetim birimine onay bilgisi gelir. Onay durumuna göre ziyaretçi internete erişim gerçekleştirebilir.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <section class="trailer_section">
+        <div class="trailer_wrapper">
+            <div class="trailer_video">
+                <div id="trailer_video_image">
+                    <img src="/assets/images/videobtn.jpg" alt="">
+                </div>
+            </div>
+            <div class="trailer_content">
+                <h3>Lider bir firma Türkiye’nin her yerinde!</h3>
+                <span>Süre, Kota ve Hız limitleme özellikleri ile internet kapasitenizi daha verimli kullanabilirsiniz. İnternetinizin eşit hızlarda kullanılması ile hız problemleriniz ortadan kalkacaktır.</span>
+            </div>
+            <div href="#" id="trailer_video_icon">
+                <img src="/assets/images/youtube_icon.png" class="youtube_icon">
+            </div>
+        </div>
+        <div class="trailer_video_modal">
+            <div class="modal_header"> 
+                <h3>WiPoint Tanıtım Videosu</h3>
+                <i class="bx bx-x" id="modal_close"></i>
+            </div>
+            <div class="modal_content">
+            </div>
+    
+        </div>
+    </section>
+    <section class="meet_wipoint_section">
+        <div class="meet_wipoint_wrapper">
+            <div class="meet_wipoint_info">
+                <h3>WiPoint İle Tanışın</h3>
+                <span>Halka açık internet hizmeti verilen bölgelerde internet erişim işlemlerini denetleyebilmek için Mikrotik cihazları ile güçlendirilmiş Cloud Hotspot ürünüdür. Kullanıcılar ağınıza dahil olduğunda WiPoint giriş yöntemlerinden doğrulama gerçekleştirerek hızlıca internet erişimini sağlar. 5651 kanunu gereği log kayıtları tutularak güvenle internet hizmetinizi sunabilirsiniz.</span>
+            </div>
+            <div class="sss_wrapper">
+                <ul class="question_type">
+                    <li class="tabs active">WiPoint Cloud Hotspot Nedir?</li>
+                    <li class="tabs">Sosyal Medya Entegrasyonu Nedir ?</li>
+                    <li class="tabs">WiPoint Entegrasyon Nedir</li>
+                    <li class="tabs">Hotspot Giriş Seçenekleri Nedir ?</li>
+                    <li class="tabs">5651 Yasal Loglama Nedir ?</li>                    
+                </ul>
+                <div class="sss_content">
+                    <div class="content content0 active">
+                        <h3>WiPoint Nedir?</h3>
+                        <span>
+                            Halka açık internet hizmeti verilen bölgelerde internet erişim işlemlerini denetleyebilmek için Mikrotik cihazları ile güçlendirilmiş Cloud Hotspot ürünüdür. Kullanıcılarınız ağınıza dahil olduğunda WiPoint giriş yöntemlerinden doğrulama gerçekleştirilerek internet erişimini sağlar.Wipoint SYSLOG Cloud loglama sistemi ile birlikte kullanıcı loglarını 5651 yasasına uygun bir şekilde saklamaktadır.
+                        </span>
+                        <a href="#">Daha fazlası...</a>
+                    </div>
+                    <div class="content content1">
+                        <h3>Sosyal Medya Entegrasyonu</h3>
+                        <span>Entegrasyonlarımızdan olan  Sosyal Medya Entegrasyonu, misafirlerinizin sosyal medya hesapları ile hızlıca internet erişimi için doğrulama yapmaları sağlar. Kullanıcılarınızla 2. kez bir hesap, kayıt açma, form doldurma işlemlerinde kaybetmiş olduğunuz zamanı en aza indirmiş olursunuz.</span>
+                        <a href="#">Daha fazlası...</a>
+                    </div>
+                    <div class="content content2">
+                        <h3>WiPoint Entegrasyon Nedir ?</h3>
+                        <span>WiPoint Entegrasyon farklı sistemlerdeki kullanıcı listelerinin senkronize bir şekilde WiPoint Bulut sistemlerine aktarılması sayesinde otomatik olarak oluşturulan kullanıcılar ile misafirleriniz hızlıca internete bağlanabilirler. Böylece misafirlerinize ikinci bir kayıt açma işlemi, form doldurma işlemleri ile yormadan kolayca bağlantı sağlarlar.</span>
+                        <a href="#">Daha fazlası...</a>
+                    </div>
+                    <div class="content content3">
+                        <h3>Giriş Seçeneklerini İnceleyin</h3>
+                        <span>Manuel Kullanıcı Giriş seçeneği ile kullanıcılar kendi kullanıcılarını oluşturup giriş yapamazlar. Sistem yöneticisi tarafından oluşturulan kullanıcı adı ve şifreler ile birlikte internet erişimi sağlayabilirler.</span>
+                        <a href="#">Daha fazlası...</a>
+                    </div>
+                    <div class="content content4">
+                        <h3>5651 Yasasının Çıkış Amacı Nedir?</h3>
+                        <span>Yasanın çıkarılmasının iki amacı bulunmaktadır.
+                            Birincisi; İnternet’in önemli aktörlerinden olan içerik sağlayıcı, yer sağlayıcı, erişim sağlayıcı ve toplu kullanım sağlayıcıların yükümlülük ve sorumluluklarını belirlemektir.</span>
+                        <a href="#">Daha fazlası...</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   <section class="footer_section">
+    <div class="footer_wrapper">
+        <div class="footer_block_wrapper">
+            <div class="footer_block">
+                <img src="/assets/images/logo.png" alt="">
+                <ul class="aboutUs_menu">
+                    <li><a href="#">Biz Kimiz</a></li>
+                    <li><a href="#">Teklif Al</a></li>
+                    <li><a href="#">Çözüm Ortaklarımız</a></li>
+                    <li><a href="#">Bizi Tercih Edenler</a></li>
+                </ul>
+            </div>
+            <div class="footer_block">
+                <h3>Entegrasyonlar</h3>
+                <ul class="aboutUs_menu">
+                    <li> <i class='bx bx-chevron-right' ></i> <a href="#">Veri Tabanı Entegrasyonu</a></li>
+                    <li> <i class='bx bx-chevron-right' ></i> <a href="#">Dosya Tabanlı Entegrasyon</a></li>
+                    <li> <i class='bx bx-chevron-right' ></i> <a href="#">Sosyal Medya Entegrasyonu</a></li>
+                    <li> <i class='bx bx-chevron-right' ></i> <a href="#">Düzenlenebilir Giriş Seçenekleri</a></li>
+                </ul>
+            </div>
+            <div class="footer_block">
+                <h3>İletişim</h3>
+                <ul class="aboutUs_menu">
+                    <li><a href="tel:08506500500"> Telefon: 0 (850) 650 0500</a></li>
+                    <li><a href="tel:02626446663"> Telefon: 0 (262) 644 6663</a></li>
+                    <li><a href="mailto:bilgi@wipoint.com.tr"> Mail: bilgi@wipoint.com.tr</a></li>
+                    <li><a href="#">Demo Talebinde Bulun</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer_icons_wrapper">
+            <div class="social_media">
+                <a target="blank_" href="https://twitter.com/wicomtr"><i class='bx bxl-twitter'></i></a>
+                <a target="blank_" href="https://www.instagram.com/internetten_teknoloji/"><i class='bx bxl-instagram-alt' ></i></a>
+                <a target="blank_" href="https://www.facebook.com/WiPoint-Hotspot-Cloud-426349994388421/"><i class='bx bxl-facebook' ></i></a>
+            </div>
+             <div class="footer_logos">
+                <a target="blank_" href="http://internetten.com.tr"><img src="assets/images/footer_logos/internetten.png" alt="İnternetten Teknoloji"></a>
+                <a target="blank_" href="https://www.wi.com.tr/ubiquiti" class="ubiquiti"><img src="assets/images/footer_logos/ubiquiti.png" alt="Ubiquiti"></a>
+                <a target="blank_" href="https://www.wi.com.tr/mikrotik"><img src="assets/images/footer_logos/mikrotik.png" alt="Mikrotik"></a>
+                <a target="blank_" href="https://wi.com.tr/"><img src="assets/images/footer_logos/wi.png" alt="wi.com.tr"></a>
+             </div>
+        </div>
+    </div>
+   </section>
+</body>
+</html>
